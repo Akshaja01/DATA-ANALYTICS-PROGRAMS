@@ -1,0 +1,13 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10,6))
+plt.plot(df4['month_number'],df4['total_profit'],)
+plt.title('Total profit of all months')
+plt.xlabel('Month number')
+plt.ylabel('Total profit')
+plt.plot(df4)
+
+
+music2_df=pd.read_excel('charts-for-assignment.xlsx',sheet_name='music2')
+
+company_sales_data_df=pd.read_excel('company_sales_data.xlsx',sheet_name='music2')
