@@ -1,0 +1,49 @@
+start_date, end_date = st.slider('Order Date Range', min(df['Order Date']), max(df['Order Date']))start_date, end_date = st.slider('Order Date Range', min(df['Order Date']), max(df['Order Date']))
+
+# Filter the data based on selections
+filtered_df = df[(df['Region'].isin(selected_region)) |
+                 (df['State'].isin(selected_state)) |
+                 (df['City'].isin(selected_city))]
+
+filtered_df = filtered_df[(filtered_df['Order Date'] >= start_date) &
+                          (filtered_df['Order Date'] <= end_date)]
+
+df=pd.read_excel("adidas.xlsx",sheet_name='Sales')
+
+
+
+
+
+
+
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier 
+import  seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
+from sklearn.model_selection import train_test_split as tts
+from sklearn.import metrics mat
+
+st.set_page_config(page_title="Machine Learning with Iris",page_icon=":tulip:",layout="wide")
+
+st.title(":tulip: Iris Data Analysis")
+Iris=pd.read_csv('Iris.csv')
+
+st.subheader("Iris Dataset")
+st.dataframe(Iris.head())
+col1,col2=st.columns(2)
+x=Iris.drop(columns['species'],axis=0)
+y=Iris.['species']
+x_train,x_test,y_train,y_test=tts(x,y,test_size=0.25,random_state=10)
+model=dtc(criterion='entropy')
+model.fit(xtrain,ytrain)
+samples=[(6.2,3.4,5.4,2.3])
+target-species=model.predict(sample1)
+st.set_page=config
+ypred=model.predict(xtest)
+accuracy_Iris=mat.accuracy_score(ytest,ypred)
+precision_Iris=mat.precision_score(ytest,ypred)
+col1
